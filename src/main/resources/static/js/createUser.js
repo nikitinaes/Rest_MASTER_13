@@ -32,6 +32,6 @@ $(document).ready();
             }).then(() => {
                 fillTable();
             })
-            document.getElementById("adminTable").click()
+            document.getElementById("adminTable").click();
         })
 }
