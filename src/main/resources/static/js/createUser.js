@@ -5,7 +5,9 @@ $(document).ready();
     $('#addForm').css('border', '1px solid red');
     const button = document.querySelector('button');
     button.setAttribute('data-toggle', 'tab');
-    button.setAttribute('data-target', '#adminTable');
+    button.setAttribute('href', '#adminTable');
+    const links = document.querySelector('.tabs').querySelectorAll('a');
+    
     console.log(button);
     button
         .addEventListener('click', (e) => {
@@ -32,6 +34,8 @@ $(document).ready();
                     roles: listRoles
                 })
             }).then(() => {
+                links[0].classList.add('active');
+                links[1].classList.remove('active');
                 fillTable();
             })
             document.getElementById("adminTable").click();
