@@ -13,7 +13,7 @@ $(document).ready();
             let listRoles = []
             nameRole.forEach((option, i) => {
                 if (option.selected) {
-                    listRoles.push({id: i, name: option.value});
+                    listRoles.push({id: i + 1, name: option.value});
                 }
             });
             console.log(listRoles);
