@@ -24,15 +24,25 @@ function fillModal (modalWindow, id, modalTarget) {
                         }
                         element.value = data[id];
                     });
-                    data.roles.forEach((item, index) => {
-                        const option = document.createElement('option');
-                        option.value = item.name;
-                        option.textContent = item.name === 'ROLE_USER' ? 'USER' : 'ADMIN';
-                        console.log(option);
-                        const number = index + 1;
-                        modalSelect.setAttribute('size', `${number}`);
-                        modalSelect.append(option);
-                    });
+                    if (modalSelect.options.length > 0) {
+                        const options = modalSelect.querySelector('option');
+
+                        data.roles.forEach((role, index) => {
+                            if (options[index].value === role.name) {
+                                options[index].setAttribute('selected', 'selected');
+                            }
+                        });
+                    } else {
+                        data.roles.forEach((item, index) => {
+                            const option = document.createElement('option');
+                            option.value = item.name;
+                            option.textContent = item.name === 'ROLE_USER' ? 'USER' : 'ADMIN';
+                            console.log(option);
+                            const number = index + 1;
+                            modalSelect.setAttribute('size', `${number}`);
+                            modalSelect.append(option);
+                        });
+                    }
                 });
         }
     }, 1000);

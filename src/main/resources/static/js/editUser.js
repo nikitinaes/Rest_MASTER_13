@@ -16,7 +16,14 @@ function fillEditModal(id) {
             obj[result[1]] = input.value;
         })
 
-        obj['roles'] = [{id: 1, name: select.value}];
+        obj['roles'] = [];
+
+        let options = document.querySelectorAll("option");
+        options.forEach((option, i) => {
+            if (option.selected) {
+                obj['roles'].push({id: i, name: option.value});
+            }
+        });
 
        fetch('users/update/' + id, {
            method: 'PUT',

@@ -9,18 +9,14 @@ $(document).ready();
         .addEventListener('click', (e) => {
             e.preventDefault()
             console.log(123)
-            let nameRole = document.getElementById("rolesCreate")
+            let nameRole = document.querySelectorAll("option");
             let listRoles = []
-            let roleValue = ""
-            for (let i = 0; i < nameRole.options.length; i++) {
-                if (nameRole.options[i].selected) {
-                    listRoles.push({
-                         id:     (nameRole.options[i] === 'ADMIN' ? 1: 2),
-                        role: "ROLE_" + nameRole.options[i].value
-                    })
-                    roleValue += nameRole.options[i].innerHTML + ''
+            nameRole.forEach((option, i) => {
+                if (option.selected) {
+                    listRoles.push({id: i, name: option.value});
                 }
-            } //added
+            });
+            console.log(listRoles);
 
             fetch(urlPost, {
                 method: "POST",
