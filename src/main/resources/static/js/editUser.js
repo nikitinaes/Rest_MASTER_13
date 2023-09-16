@@ -3,8 +3,10 @@ function fillEditModal(id) {
     fillModal(modalWindow, id, '#editModal');
 
     const form = modalWindow.querySelector('#edit_user_form'),
-        inputs = modalWindow.querySelectorAll('input'),
-        select = modalWindow.querySelector('select');
+        inputs = modalWindow.querySelectorAll('input');
+
+
+
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();

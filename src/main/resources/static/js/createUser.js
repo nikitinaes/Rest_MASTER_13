@@ -3,9 +3,11 @@ $(document).ready();
 {
     console.log('starting')
     $('#addForm').css('border', '1px solid red');
-    const newUserForm = document.querySelector('button')
-    console.log(newUserForm);
-    newUserForm
+    const button = document.querySelector('button');
+    button.setAttribute('data-toggle', 'tab');
+    button.setAttribute('data-target', '#adminTable');
+    console.log(button);
+    button
         .addEventListener('click', (e) => {
             e.preventDefault()
             console.log(123)
