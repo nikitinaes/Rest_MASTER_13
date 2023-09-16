@@ -21,7 +21,7 @@ function fillEditModal(id) {
         let options = document.querySelectorAll("option");
         options.forEach((option, i) => {
             if (option.selected) {
-                obj['roles'].push({id: i, name: option.value});
+                obj['roles'].push({id: i + 1, name: option.value});
             }
         });
 
