@@ -3,9 +3,9 @@ $(document).ready();
 {
     console.log('starting')
     $('#addForm').css('border', '1px solid red');
-    const button = document.querySelector('button');
-    button.setAttribute('data-toggle', 'tab');
-    button.setAttribute('href', '#adminTable');
+    // const button = document.querySelector('button');
+    // button.setAttribute('data-toggle', 'tab');
+    // button.setAttribute('href', '#adminTable');
     const links = document.querySelector('.tabs').querySelectorAll('a');
     
     console.log(button);
@@ -36,6 +36,8 @@ $(document).ready();
             }).then(() => {
                 links[0].classList.add('active');
                 links[1].classList.remove('active');
+                document.querySelector('#adminTable').classList.add('active', 'show');
+                document.querySelector('#newUser').classList.remove('active', 'show');
                 fillTable();
             })
             document.getElementById("adminTable").click();
