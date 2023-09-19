@@ -1,9 +1,8 @@
 const urlPost = '/users/add'
 $(document).ready();
 {
-    console.log('starting')
-    $('#addForm').css('border', '1px solid red');
-    // const button = document.querySelector('button');
+
+    const button = document.querySelector('button');
     // button.setAttribute('data-toggle', 'tab');
     // button.setAttribute('href', '#adminTable');
     const links = document.querySelector('.tabs').querySelectorAll('a');
@@ -13,7 +12,8 @@ $(document).ready();
         .addEventListener('click', (e) => {
             e.preventDefault()
             console.log(123)
-            let nameRole = document.querySelectorAll("option");
+            const addUser = document.querySelector('#newUser');
+            let nameRole = addUser.querySelectorAll("option");
             let listRoles = []
             nameRole.forEach((option, i) => {
                 if (option.selected) {

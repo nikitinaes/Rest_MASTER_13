@@ -25,7 +25,7 @@ function fillModal (modalWindow, id, modalTarget) {
                         element.value = data[id];
                     });
                     if (modalSelect.options.length > 0) {
-                        const options = modalSelect.querySelector('option');
+                        const options = modalSelect.querySelectorAll('option');
 
                         data.roles.forEach((role, index) => {
                             if (options[index].value === role.name) {

@@ -75,6 +75,7 @@ public class AdminController {
      }
 
 
+
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers() {
         return new ResponseEntity<>(userService.findAllUsers(), HttpStatus.OK);
